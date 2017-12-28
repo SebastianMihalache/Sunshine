@@ -120,16 +120,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         JSONArray weatherArray = object.getJSONArray("weather");
                         JSONObject weatherType = weatherArray.getJSONObject(0);
                         String weather = weatherType.getString("main");
-                        String weatherDescription = weatherType.getString("description");
 
                         String rawDate = object.getString("dt_txt");
 
-                        DailyWeatherReport report = new DailyWeatherReport(cityName, country, current_temp.intValue(), min_temp.intValue(), max_temp.intValue(), weather, weatherDescription, rawDate);
+                        DailyWeatherReport report = new DailyWeatherReport(cityName, country, current_temp.intValue(), min_temp.intValue(), max_temp.intValue(), weather, rawDate);
 
                         Log.v("JSON", "Printing from: " + report.getCity());
                         Log.v("JSON", "Printing from: " + report.getCountry());
                         Log.v("JSON", "Printing from: " + report.getWeather());
-                        Log.v("JSON", "Printing from: " + report.getWeatherDescription());
                         Log.v("JSON", "Printing from: " + report.getTemp());
 
                         weatherReportList.add(report);
@@ -176,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_SNOW:
                     weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.snow));
+                    break;
+                case DailyWeatherReport.WEATHER_TYPE_THUNDERSTORM:
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.thunder_lightning));
                     break;
 
                     default:
@@ -314,6 +315,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 case DailyWeatherReport.WEATHER_TYPE_SNOW:
                     cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.snow_mini));
                     break;
+                case DailyWeatherReport.WEATHER_TYPE_THUNDERSTORM:
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.thunder_lightning_mini));
 
                 default:
                     cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.sunny_mini));
