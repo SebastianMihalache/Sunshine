@@ -32,10 +32,55 @@ public class DailyWeatherReport {
         this.weatherDescription = weatherDescription;
         this.date = rawDatetoDate(rawDate);
     }
-
+    //convert raw date to a nice, clean string
     public String rawDatetoDate (String rawDate){
-        //convert raw date to a nice, clean string
-        return "May 1";
+
+        // get the month and day out of the raw date
+        String month = rawDate.substring(rawDate.indexOf("-")+1, rawDate.indexOf("-")+3);
+        String day = rawDate.substring(rawDate.indexOf("-")+4, rawDate.indexOf("-")+7);
+
+        // set the month to text
+        String monthText;
+        switch (month){
+            case "01":
+                monthText = "January";
+                break;
+            case "02":
+                monthText = "February";
+                break;
+            case "03":
+                monthText = "March";
+                break;
+            case "04":
+                monthText = "April";
+                break;
+            case "05":
+                monthText = "May";
+                break;
+            case "06":
+                monthText = "June";
+                break;
+            case "07":
+                monthText = "July";
+                break;
+            case "08":
+                monthText = "August";
+                break;
+            case "09":
+                monthText = "September";
+                break;
+            case "10":
+                monthText = "October";
+                break;
+            case "11":
+                monthText = "November";
+                break;
+            default:
+                monthText = "December";
+        }
+
+
+        return monthText + " " + day;
     }
 
     public String getCity() {

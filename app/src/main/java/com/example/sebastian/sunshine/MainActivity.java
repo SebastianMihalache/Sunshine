@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     // grab the JSON array list for the next 5 days
                     JSONArray list = response.getJSONArray("list");
 
-                    for (int x = 0; x < 5; x++) {
+                    for (int x = 0; x < 39;) {
                         JSONObject object = list.getJSONObject(x);
                         JSONObject main = object.getJSONObject("main");
                         Double current_temp = main.getDouble("temp");
@@ -133,6 +133,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         Log.v("JSON", "Printing from: " + report.getTemp());
 
                         weatherReportList.add(report);
+
+                        // grab the next day
+                        x = x + 8;
                     }
 
                     Log.v("JSON", cityName + " " + country);
@@ -178,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     default:
                     weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.sunny));
             }
-            date.setText("Today, 24 December");
+            date.setText("Today, " + report.getDate());
             currentTemp.setText(Integer.toString(report.getTemp()));
             minTemp.setText(Integer.toString(report.getMin_temp()));
             location.setText(report.getCity() + " " + report.getCountry());
