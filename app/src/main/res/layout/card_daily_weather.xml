@@ -3,20 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_height="81dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:id="@+id/list_container_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/gradient_cardview"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
 
         <ImageView
             android:id="@+id/weather_mini_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/sunny_mini" />
+            app:srcCompat="@drawable/clear_img" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,7 +45,9 @@
                 android:id="@+id/weather_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
                 android:text="Tommorrow"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
@@ -36,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sunny"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -52,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="26"
                 android:textAlignment="textEnd"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
@@ -60,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="24"
                 android:textAlignment="textEnd"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>

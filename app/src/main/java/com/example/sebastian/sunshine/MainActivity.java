@@ -167,20 +167,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             switch (report.getWeather()) {
                 case DailyWeatherReport.WEATHER_TYPE_CLOUDS:
-                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.cloudy));
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.cloudy_img));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_RAIN:
-                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.rainy));
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.rain_img));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_SNOW:
-                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.snow));
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.snow_img));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_THUNDERSTORM:
-                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.thunder_lightning));
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.thunder_img));
                     break;
 
                     default:
-                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.sunny));
+                    weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.clear_img));
             }
             date.setText("Today, " + report.getDate());
             currentTemp.setText(Integer.toString(report.getTemp()));
@@ -307,19 +307,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             switch (report.getWeather()) {
                 case DailyWeatherReport.WEATHER_TYPE_CLOUDS:
-                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.cloudy_mini));
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.cloudy_img_mini));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_RAIN:
-                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.rainy_mini));
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.rain_img_mini));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_SNOW:
-                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.snow_mini));
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.snow_img_mini));
                     break;
                 case DailyWeatherReport.WEATHER_TYPE_THUNDERSTORM:
-                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.thunder_lightning_mini));
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.thunder_img_mini));
 
                 default:
-                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.sunny_mini));
+                    cardWeatherMini.setImageDrawable(getResources().getDrawable(R.drawable.clear_img_mini));
             }
 
         }
