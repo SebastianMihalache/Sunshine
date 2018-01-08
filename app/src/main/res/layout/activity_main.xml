@@ -40,17 +40,30 @@
 
 
                 <TextView
+                    android:id="@+id/today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/today"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location" />
+
+                <TextView
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="Today, May 1"
+                    android:text="May 1"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/today" />
 
                 <TextView
                     android:id="@+id/temp"
@@ -66,49 +79,66 @@
                     app:layout_constraintTop_toBottomOf="@+id/date" />
 
                 <TextView
-                    android:id="@+id/minTemp"
+                    android:id="@+id/maxTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="27°"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/temp"
+                    app:layout_constraintTop_toBottomOf="@+id/temp" />
+
+                <TextView
+                    android:id="@+id/minTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/roboto"
                     android:text="24°"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/temp"
-                    app:layout_constraintStart_toEndOf="@+id/temp" />
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/temp"
+                    app:layout_constraintTop_toBottomOf="@+id/temp" />
 
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_thin"
                     android:text="Ubud, ID"
                     android:textColor="#FFFFFF"
-                    android:textSize="18sp"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/temp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/weather"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto"
                     android:text="Clear"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/location"
-                    app:layout_constraintEnd_toEndOf="@+id/weatherImg" />
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="@+id/weatherImg"
+                    app:layout_constraintStart_toStartOf="@+id/weatherImg"
+                    app:layout_constraintTop_toBottomOf="@+id/weatherImg" />
 
                 <ImageView
                     android:id="@+id/weatherImg"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/temp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="19dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/minTemp"
+                    app:layout_constraintTop_toBottomOf="@+id/location"
                     app:srcCompat="@drawable/clear_img" />
 
             </android.support.constraint.ConstraintLayout>

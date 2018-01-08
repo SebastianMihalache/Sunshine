@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private TextView currentTemp;
     private TextView location;
     private TextView minTemp;
+    private TextView maxTemp;
     private TextView weatherConditions;
     private TextView date;
 
@@ -183,8 +184,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     weatherImage.setImageDrawable(getResources().getDrawable(R.drawable.clear_img));
             }
             date.setText("Today, " + report.getDate());
-            currentTemp.setText(Integer.toString(report.getTemp()));
-            minTemp.setText(Integer.toString(report.getMin_temp()));
+            currentTemp.setText(Integer.toString(report.getTemp()) + "°");
+            maxTemp.setText(Integer.toString(report.getMax_temp()) + "°");
+            minTemp.setText(Integer.toString(report.getMin_temp()) + "°");
             location.setText(report.getCity() + " " + report.getCountry());
             weatherConditions.setText(report.getWeather());
         }
@@ -302,8 +304,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             cardDate.setText(report.getDate());
             cardDescription.setText(report.getWeather());
-            cardMinTemp.setText(Integer.toString(report.getMin_temp()));
-            cardMaxTemp.setText(Integer.toString(report.getMax_temp()));
+            cardMinTemp.setText(Integer.toString(report.getMin_temp()) + "°");
+            cardMaxTemp.setText(Integer.toString(report.getMax_temp()) + "°");
 
             switch (report.getWeather()) {
                 case DailyWeatherReport.WEATHER_TYPE_CLOUDS:
